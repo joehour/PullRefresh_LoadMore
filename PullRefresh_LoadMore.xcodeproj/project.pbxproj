@@ -7,21 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B40BDCAE1CD349A800686090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40BDCA31CD349A800686090 /* AppDelegate.swift */; };
-		B40BDCAF1CD349A800686090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40BDCA41CD349A800686090 /* Assets.xcassets */; };
-		B40BDCB01CD349A800686090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40BDCA51CD349A800686090 /* LaunchScreen.storyboard */; };
-		B40BDCB11CD349A800686090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40BDCA71CD349A800686090 /* Main.storyboard */; };
-		B40BDCB21CD349A800686090 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B40BDCA91CD349A800686090 /* Info.plist */; };
-		B40BDCB31CD349A800686090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40BDCAA1CD349A800686090 /* ViewController.swift */; };
 		B4A125801CD1A68300625115 /* PullRefresh_LoadMore.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4A125881CD1AA2D00625115 /* RefreshLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A125871CD1AA2D00625115 /* RefreshLoadView.swift */; };
 		B4E33F211CD34158002F6F3C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E33F201CD34158002F6F3C /* arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B40BDCB51CD349A800686090 /* PBXContainerItemProxy */ = {
+		B40BDCE61CD34B1200686090 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B40BDCAB1CD349A800686090 /* Example.xcodeproj */;
+			containerPortal = B40BDCE21CD34B1200686090 /* Example.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B4E33F311CD34431002F6F3C;
 			remoteInfo = Example;
@@ -41,13 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B40BDCA31CD349A800686090 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B40BDCA41CD349A800686090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B40BDCA61CD349A800686090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B40BDCA81CD349A800686090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B40BDCA91CD349A800686090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B40BDCAA1CD349A800686090 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B40BDCAB1CD349A800686090 /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Example.xcodeproj; sourceTree = "<group>"; };
+		B40BDCE21CD34B1200686090 /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Example.xcodeproj; path = "../未命名檔案夾/Example/Example.xcodeproj"; sourceTree = "<group>"; };
 		B4A1257C1CD1A68300625115 /* PullRefresh_LoadMore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PullRefresh_LoadMore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PullRefresh_LoadMore.h; path = PullRefresh_LoadMore/PullRefresh_LoadMore.h; sourceTree = "<group>"; };
 		B4A125811CD1A68300625115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PullRefresh_LoadMore/Info.plist; sourceTree = "<group>"; };
@@ -66,32 +54,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B40BDCA11CD349A800686090 /* Example */ = {
+		B40BDCE31CD34B1200686090 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B40BDCA21CD349A800686090 /* Example */,
-				B40BDCAB1CD349A800686090 /* Example.xcodeproj */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		B40BDCA21CD349A800686090 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				B40BDCA31CD349A800686090 /* AppDelegate.swift */,
-				B40BDCA41CD349A800686090 /* Assets.xcassets */,
-				B40BDCA51CD349A800686090 /* LaunchScreen.storyboard */,
-				B40BDCA71CD349A800686090 /* Main.storyboard */,
-				B40BDCA91CD349A800686090 /* Info.plist */,
-				B40BDCAA1CD349A800686090 /* ViewController.swift */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		B40BDCAC1CD349A800686090 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B40BDCB61CD349A800686090 /* Example.app */,
+				B40BDCE71CD34B1200686090 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +65,7 @@
 		B4A125721CD1A68300625115 = {
 			isa = PBXGroup;
 			children = (
-				B40BDCA11CD349A800686090 /* Example */,
+				B40BDCE21CD34B1200686090 /* Example.xcodeproj */,
 				B4A1257E1CD1A68300625115 /* PullRefresh_LoadMore */,
 				B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */,
 				B4A125811CD1A68300625115 /* Info.plist */,
@@ -195,8 +161,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B40BDCAC1CD349A800686090 /* Products */;
-					ProjectRef = B40BDCAB1CD349A800686090 /* Example.xcodeproj */;
+					ProductGroup = B40BDCE31CD34B1200686090 /* Products */;
+					ProjectRef = B40BDCE21CD34B1200686090 /* Example.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -207,11 +173,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B40BDCB61CD349A800686090 /* Example.app */ = {
+		B40BDCE71CD34B1200686090 /* Example.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = Example.app;
-			remoteRef = B40BDCB51CD349A800686090 /* PBXContainerItemProxy */;
+			remoteRef = B40BDCE61CD34B1200686090 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -221,11 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40BDCB01CD349A800686090 /* LaunchScreen.storyboard in Resources */,
-				B40BDCAF1CD349A800686090 /* Assets.xcassets in Resources */,
 				B4E33F211CD34158002F6F3C /* arrow.png in Resources */,
-				B40BDCB21CD349A800686090 /* Info.plist in Resources */,
-				B40BDCB11CD349A800686090 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,32 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40BDCB31CD349A800686090 /* ViewController.swift in Sources */,
-				B40BDCAE1CD349A800686090 /* AppDelegate.swift in Sources */,
 				B4A125881CD1AA2D00625115 /* RefreshLoadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B40BDCA51CD349A800686090 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B40BDCA61CD349A800686090 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B40BDCA71CD349A800686090 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B40BDCA81CD349A800686090 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B4A125821CD1A68300625115 /* Debug */ = {
