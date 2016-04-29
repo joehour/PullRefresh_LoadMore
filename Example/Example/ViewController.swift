@@ -21,6 +21,7 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        //add Data
         for i in 1...(100) {
             allObjectArray.addObject(i.description)
         }
