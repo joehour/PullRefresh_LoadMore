@@ -12,16 +12,6 @@
 		B4E33F211CD34158002F6F3C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E33F201CD34158002F6F3C /* arrow.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B4E33F4A1CD34432002F6F3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B4E33F461CD34431002F6F3C /* Example.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B4E33F311CD34431002F6F3C;
-			remoteInfo = Example;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B45679D31CD2450200A5E6F8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -40,7 +30,6 @@
 		B4A125811CD1A68300625115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PullRefresh_LoadMore/Info.plist; sourceTree = "<group>"; };
 		B4A125871CD1AA2D00625115 /* RefreshLoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshLoadView.swift; path = PullRefresh_LoadMore/RefreshLoadView.swift; sourceTree = "<group>"; };
 		B4E33F201CD34158002F6F3C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Images/arrow.png; sourceTree = "<group>"; };
-		B4E33F461CD34431002F6F3C /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Example.xcodeproj; path = Example/Example.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +46,6 @@
 		B4A125721CD1A68300625115 = {
 			isa = PBXGroup;
 			children = (
-				B4E33F461CD34431002F6F3C /* Example.xcodeproj */,
 				B4A1257E1CD1A68300625115 /* PullRefresh_LoadMore */,
 				B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */,
 				B4A125811CD1A68300625115 /* Info.plist */,
@@ -88,14 +76,6 @@
 				B4E33F201CD34158002F6F3C /* arrow.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		B4E33F471CD34431002F6F3C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B4E33F4B1CD34432002F6F3C /* Example.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,28 +138,12 @@
 			mainGroup = B4A125721CD1A68300625115;
 			productRefGroup = B4A1257D1CD1A68300625115 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B4E33F471CD34431002F6F3C /* Products */;
-					ProjectRef = B4E33F461CD34431002F6F3C /* Example.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B4A1257B1CD1A68300625115 /* PullRefresh_LoadMore */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B4E33F4B1CD34432002F6F3C /* Example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Example.app;
-			remoteRef = B4E33F4A1CD34432002F6F3C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B4A1257A1CD1A68300625115 /* Resources */ = {
