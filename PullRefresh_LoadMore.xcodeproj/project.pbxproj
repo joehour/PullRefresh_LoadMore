@@ -13,9 +13,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B40BDCE61CD34B1200686090 /* PBXContainerItemProxy */ = {
+		B40BDCEC1CD3527F00686090 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B40BDCE21CD34B1200686090 /* Example.xcodeproj */;
+			containerPortal = B40BDCE81CD3527F00686090 /* Example.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B4E33F311CD34431002F6F3C;
 			remoteInfo = Example;
@@ -35,7 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B40BDCE21CD34B1200686090 /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Example.xcodeproj; path = "../未命名檔案夾/Example/Example.xcodeproj"; sourceTree = "<group>"; };
+		B40BDCE81CD3527F00686090 /* Example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Example.xcodeproj; path = Example/Example.xcodeproj; sourceTree = "<group>"; };
 		B4A1257C1CD1A68300625115 /* PullRefresh_LoadMore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PullRefresh_LoadMore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PullRefresh_LoadMore.h; path = PullRefresh_LoadMore/PullRefresh_LoadMore.h; sourceTree = "<group>"; };
 		B4A125811CD1A68300625115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PullRefresh_LoadMore/Info.plist; sourceTree = "<group>"; };
@@ -54,10 +54,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B40BDCE31CD34B1200686090 /* Products */ = {
+		B40BDCE91CD3527F00686090 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B40BDCE71CD34B1200686090 /* Example.app */,
+				B40BDCED1CD3527F00686090 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 		B4A125721CD1A68300625115 = {
 			isa = PBXGroup;
 			children = (
-				B40BDCE21CD34B1200686090 /* Example.xcodeproj */,
+				B40BDCE81CD3527F00686090 /* Example.xcodeproj */,
 				B4A1257E1CD1A68300625115 /* PullRefresh_LoadMore */,
 				B4A1257F1CD1A68300625115 /* PullRefresh_LoadMore.h */,
 				B4A125811CD1A68300625115 /* Info.plist */,
@@ -161,8 +161,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B40BDCE31CD34B1200686090 /* Products */;
-					ProjectRef = B40BDCE21CD34B1200686090 /* Example.xcodeproj */;
+					ProductGroup = B40BDCE91CD3527F00686090 /* Products */;
+					ProjectRef = B40BDCE81CD3527F00686090 /* Example.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -173,11 +173,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B40BDCE71CD34B1200686090 /* Example.app */ = {
+		B40BDCED1CD3527F00686090 /* Example.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = Example.app;
-			remoteRef = B40BDCE61CD34B1200686090 /* PBXContainerItemProxy */;
+			remoteRef = B40BDCEC1CD3527F00686090 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

@@ -414,6 +414,9 @@ public class RefreshLoadView: UIView{
     
     public func setData(Data: NSMutableArray){
         allObjectArray = Data
+        if(self.pageItems > self.allObjectArray.count){
+            self.pageItems = self.allObjectArray.count
+        }
         showElements.addObjectsFromArray(self.allObjectArray.subarrayWithRange(NSMakeRange(self.nowItem, self.pageItems)))
-    }
+   }
 }
