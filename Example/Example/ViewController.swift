@@ -19,20 +19,22 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //add Data
-        for i in 1...(10) {
+        //add Test Data
+        for i in 1...(100) {
             allObjectArray.addObject(i.description)
         }
         
+        //Initial
         refreshloadView  = RefreshLoadView(frame: CGRectMake(95, 0, table_view.frame.width, table_view.frame.height), pic_size: CGFloat(30), insert_size: CGFloat(50))
         
-        
+        //have 25 item on each page
         refreshloadView.pageItems = 25
+        
+        //set Data
         refreshloadView.setData(allObjectArray)
-
         refreshloadView.delegate = self
+        
+        //add RefreshLoadView to tableView
         table_view.addSubview(refreshloadView)
     }
     
@@ -43,12 +45,13 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
     
     func refreshData(view: RefreshLoadView) {
         
-        //
+        //refresh data
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            
             sleep(1)
             dispatch_async(dispatch_get_main_queue(), {
                 
-                
+                //end refresh
                 self.refreshloadView.endRefresh(self.table_view)
             });
         });
@@ -59,11 +62,12 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
     
     func loadData(view: RefreshLoadView) {
         
-        
+        //load more data
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             sleep(1)
             dispatch_async(dispatch_get_main_queue(), {
                 
+                //end load more
                 self.refreshloadView.endLoadMore(self.table_view)
             });
         });
@@ -97,7 +101,7 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
         
     }
     
-    
+    ////show cell
     func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
@@ -117,13 +121,14 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
             
     }
     
+    //scroll event
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         refreshloadView.scrollViewDidScroll(scrollView)
         
     }
     
-    
+    //scroll event
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
         refreshloadView.scrollViewDidEndDragging(scrollView)
