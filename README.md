@@ -8,8 +8,8 @@
 #### CocoaPods
 
 ##Example
-    
-    ####Please check out the example project included.
+
+####Please check out the example project included.
    
     import PullRefresh_LoadMore
     class ViewController: UIViewController, RefreshLoadViewDelegate {
