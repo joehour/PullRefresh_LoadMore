@@ -9,7 +9,7 @@
 
 Check out [Get Started](https://guides.cocoapods.org/using/getting-started.html) tab on [cocoapods.org](http://cocoapods.org/).
 
-To use ScratchCard in your project add the following 'Podfile' to your project
+To use PullRefresh_LoadMore in your project add the following 'Podfile' to your project
 
 	source 'https://github.com/joehour/PullRefresh_LoadMore.git'
 	platform :ios, '8.0'
