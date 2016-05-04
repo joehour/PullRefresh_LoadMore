@@ -15,7 +15,7 @@ To use ScratchCard in your project add the following 'Podfile' to your project
 	platform :ios, '8.0'
 	use_frameworks!
 
-	pod 'PullRefresh_LoadMore', '~> 1.0.2'
+	pod 'PullRefresh_LoadMore', '~> 1.0.1'
 
 Then run:
 
