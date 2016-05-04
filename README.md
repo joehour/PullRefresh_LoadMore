@@ -15,7 +15,7 @@ To use ScratchCard in your project add the following 'Podfile' to your project
 	platform :ios, '8.0'
 	use_frameworks!
 
-	pod 'PullRefresh_LoadMore', '~> 1.0.1'
+	pod 'PullRefresh_LoadMore', '~> 1.0.2'
 
 Then run:
 
@@ -85,6 +85,11 @@ Then run:
         
     }
     
+##Requirements
+
+- iOS 8.0 or later
+- Swift 2.2 or higher
+- Xcode 7.3 or higher
     
 ##License
 PullRefresh_LoadMore is available under the MIT License.
