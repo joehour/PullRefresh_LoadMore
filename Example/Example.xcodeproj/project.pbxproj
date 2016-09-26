@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B40BDCEF1CD354C300686090 /* PullRefresh_LoadMore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40BDCEE1CD354C300686090 /* PullRefresh_LoadMore.framework */; };
-		B40BDCF01CD354C300686090 /* PullRefresh_LoadMore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B40BDCEE1CD354C300686090 /* PullRefresh_LoadMore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B43525B51D98CB7900D1B57C /* PullRefresh_LoadMore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43525B41D98CB7900D1B57C /* PullRefresh_LoadMore.framework */; };
+		B43525B61D98CB7900D1B57C /* PullRefresh_LoadMore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B43525B41D98CB7900D1B57C /* PullRefresh_LoadMore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4E33F351CD34431002F6F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E33F341CD34431002F6F3C /* AppDelegate.swift */; };
 		B4E33F371CD34431002F6F3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E33F361CD34431002F6F3C /* ViewController.swift */; };
 		B4E33F3A1CD34431002F6F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E33F381CD34431002F6F3C /* Main.storyboard */; };
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B40BDCF01CD354C300686090 /* PullRefresh_LoadMore.framework in Embed Frameworks */,
+				B43525B61D98CB7900D1B57C /* PullRefresh_LoadMore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B40BDCEE1CD354C300686090 /* PullRefresh_LoadMore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = PullRefresh_LoadMore.framework; path = "/Users/joejoe/Library/Developer/Xcode/DerivedData/PullRefresh_LoadMore-ejkgxxrlgrvsmnbhydlmjiqpiobp/Build/Products/Debug-iphoneos/PullRefresh_LoadMore.framework"; sourceTree = "<absolute>"; };
+		B43525B41D98CB7900D1B57C /* PullRefresh_LoadMore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PullRefresh_LoadMore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E33F311CD34431002F6F3C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E33F341CD34431002F6F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E33F361CD34431002F6F3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B40BDCEF1CD354C300686090 /* PullRefresh_LoadMore.framework in Frameworks */,
+				B43525B51D98CB7900D1B57C /* PullRefresh_LoadMore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		B4E33F281CD34431002F6F3C = {
 			isa = PBXGroup;
 			children = (
-				B40BDCEE1CD354C300686090 /* PullRefresh_LoadMore.framework */,
+				B43525B41D98CB7900D1B57C /* PullRefresh_LoadMore.framework */,
 				B4E33F331CD34431002F6F3C /* Example */,
 				B4E33F321CD34431002F6F3C /* Products */,
 			);
@@ -116,6 +116,8 @@
 				TargetAttributes = {
 					B4E33F301CD34431002F6F3C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Y3YDLKH37F;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -269,11 +271,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3YDLKH37F;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joe.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -281,11 +285,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3YDLKH37F;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = joe.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

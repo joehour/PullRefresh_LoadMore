@@ -11,33 +11,33 @@ import UIKit
 
 
 public protocol RefreshLoadViewDelegate {
-    func refreshData(view: RefreshLoadView)
-    func loadData(view: RefreshLoadView)
+    func refreshData(_ view: RefreshLoadView)
+    func loadData(_ view: RefreshLoadView)
 }
 
 enum ActionState{
     
-    case Normal
+    case normal
     
-    case TopPull
-    case PullRefresh
-    case Refreshing
+    case topPull
+    case pullRefresh
+    case refreshing
     
-    case BottomPull
-    case LoadMore
-    case Loading
+    case bottomPull
+    case loadMore
+    case loading
     
 }
 
-public class RefreshLoadView: UIView{
+open class RefreshLoadView: UIView{
     
-    public var delegate :RefreshLoadViewDelegate?
+    open var delegate :RefreshLoadViewDelegate?
     
-    public var allObjectArray: NSMutableArray = []
-    public var showElements: NSMutableArray = []
+    open var allObjectArray: NSMutableArray = []
+    open var showElements: NSMutableArray = []
     
-    public var pageItems: Int = 0
-    public var nowItem: Int = 0
+    open var pageItems: Int = 0
+    open var nowItem: Int = 0
     
     var insertSize: CGFloat = 50
     var picWidth: CGFloat = 0
@@ -46,7 +46,7 @@ public class RefreshLoadView: UIView{
     var statusLabel: UILabel = UILabel()
     var activityView: UIActivityIndicatorView = UIActivityIndicatorView()
     var loadactivityView: UIActivityIndicatorView = UIActivityIndicatorView()
-    var state: ActionState = ActionState.Normal
+    var state: ActionState = ActionState.normal
     var arrowLayer: CALayer = CALayer()
     var isrotate: Bool = true
     
@@ -71,54 +71,54 @@ public class RefreshLoadView: UIView{
     
     func Init(){
         
-        self.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        self.autoresizingMask = UIViewAutoresizing.flexibleWidth
         
         //Background Color
         //let background: UIView = UIView(frame: CGRectMake(0, -self.frame.size.height, self.frame.size.width, self.frame.size.height))
         //background.backgroundColor = UIColor.lightGrayColor()
         //self.addSubview(background)
         
-        arrowLayer.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-picWidth, picWidth, picHeight)
-        let path = NSBundle(forClass: RefreshLoadView.self).pathForResource("arrow", ofType: "png")
-        arrowLayer.contents = UIImage(contentsOfFile: path!)!.CGImage
+        arrowLayer.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y-picWidth, width: picWidth, height: picHeight)
+        let path = Bundle(for: RefreshLoadView.self).path(forResource: "arrow", ofType: "png")
+        arrowLayer.contents = UIImage(contentsOfFile: path!)!.cgImage
         arrowLayer.contentsGravity = kCAGravityResizeAspect
-        arrowLayer.contentsScale = UIScreen.mainScreen().scale
+        arrowLayer.contentsScale = UIScreen.main.scale
         arrowLayer.transform = CATransform3DRotate(arrowLayer.transform, CGFloat(M_PI), 0, 0, 1)
         self.layer.addSublayer(arrowLayer)
         
-        let label: UILabel = UILabel(frame: CGRectMake(self.frame.origin.x+1.2*picWidth, self.frame.origin.y-picHeight, self.frame.size.width, picHeight))
-        label.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        label.font = UIFont.boldSystemFontOfSize(13)
-        label.textColor = UIColor.grayColor()
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = NSTextAlignment.Left
+        let label: UILabel = UILabel(frame: CGRect(x: self.frame.origin.x+1.2*picWidth, y: self.frame.origin.y-picHeight, width: self.frame.size.width, height: picHeight))
+        label.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.textColor = UIColor.gray
+        label.backgroundColor = UIColor.clear
+        label.textAlignment = NSTextAlignment.left
         
         self.addSubview(label)
         statusLabel = label
         
-        let view: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-        view.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-picHeight, picWidth, picHeight)
+        let view: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        view.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y-picHeight, width: picWidth, height: picHeight)
         self.addSubview(view)
         activityView = view
-        activityView.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         
-        let active_view: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        let active_view: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         
         self.addSubview(active_view)
         loadactivityView = active_view
-        loadactivityView.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        loadactivityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         
         isrotate = true
-        setState(.Normal)
+        setState(.normal)
         
-        self.hidden = false
+        self.isHidden = false
     }
     
-    func animateCAlayer(layer: CALayer) {
+    func animateCAlayer(_ layer: CALayer) {
         
-        layer.hidden = false
+        layer.isHidden = false
         CATransaction.begin()
-        let animationDuration: NSTimeInterval = 0.5
+        let animationDuration: TimeInterval = 0.5
         CATransaction.setAnimationDuration(animationDuration)
         CATransaction.setCompletionBlock {
             
@@ -132,9 +132,9 @@ public class RefreshLoadView: UIView{
     }
     
     
-    func resetCAlayer(layer: CALayer, isrotate: Bool) {
+    func resetCAlayer(_ layer: CALayer, isrotate: Bool) {
         
-        layer.hidden = false
+        layer.isHidden = false
         if isrotate{
             layer.transform = CATransform3DRotate(layer.transform, CGFloat(-M_PI), 0, 0, 1)
         }
@@ -144,28 +144,28 @@ public class RefreshLoadView: UIView{
     
     
     
-    func setState(_state: ActionState) {
+    func setState(_ _state: ActionState) {
         switch _state {
             
-        case .Normal:
+        case .normal:
             statusLabel.text = NSLocalizedString("", comment: "")
             resetCAlayer(arrowLayer, isrotate: isrotate)
             activityView.stopAnimating()
             loadactivityView.stopAnimating()
             
             
-        case .TopPull:
+        case .topPull:
             statusLabel.text = NSLocalizedString("", comment: "")
             
-        case .PullRefresh:
+        case .pullRefresh:
             statusLabel.text = NSLocalizedString("", comment: "")
             animateCAlayer(arrowLayer)
             
-        case .Refreshing:
+        case .refreshing:
             statusLabel.text = NSLocalizedString("Refreshing...", comment: "")
             activityView.startAnimating()
             
-        case .Loading:
+        case .loading:
             statusLabel.text = NSLocalizedString("", comment: "")
             
         default:
@@ -181,41 +181,41 @@ public class RefreshLoadView: UIView{
     
     
     
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if scrollView.dragging {
-            if state == .Normal{
+        if scrollView.isDragging {
+            if state == .normal{
                 if -scrollView.contentOffset.y > 0 {
-                    setState(.TopPull)
+                    setState(.topPull)
                     
                 }
                 
             }
             
-            if state == .TopPull || state == .LoadMore{
+            if state == .topPull || state == .loadMore{
                 if -scrollView.contentOffset.y > insertSize {
-                    setState(.PullRefresh)
+                    setState(.pullRefresh)
                     
                     
                 }
             }
             
             
-            if state == .Normal {
+            if state == .normal {
                 if scrollView.contentOffset.y > (scrollView.contentSize.height - (scrollView.frame.size.height)) && scrollView.contentSize.height > 0 {
                     
-                    setState(.BottomPull)
+                    setState(.bottomPull)
                     
                     
                 }
             }
             
             
-            if state == .BottomPull {
+            if state == .bottomPull {
                 if scrollView.contentOffset.y > 0 {
                     
-                    UIView.animateWithDuration(
-                        Double(1),
+                    UIView.animate(
+                        withDuration: Double(1),
                         animations: {
                             
                             scrollView.contentInset = UIEdgeInsetsMake(0, 0, self.insertSize, 0)
@@ -223,7 +223,7 @@ public class RefreshLoadView: UIView{
                         },
                         completion: { finished in
                             
-                            self.setState(.LoadMore)
+                            self.setState(.loadMore)
                         }
                     )
                 }
@@ -232,13 +232,13 @@ public class RefreshLoadView: UIView{
             
             
             
-            if state == .LoadMore {
+            if state == .loadMore {
                 loadactivityView.startAnimating()
-                self.loadactivityView.frame = CGRectMake(self.frame.origin.x, scrollView.contentSize.height, picWidth, picHeight)
+                self.loadactivityView.frame = CGRect(x: self.frame.origin.x, y: scrollView.contentSize.height, width: picWidth, height: picHeight)
                 if delegate != nil {
                     delegate!.loadData(self)
                 }
-                setState(.Loading)
+                setState(.loading)
             }
             
         }
@@ -247,12 +247,12 @@ public class RefreshLoadView: UIView{
     }
     
     
-    public func scrollViewDidEndDragging(scrollView: UIScrollView) {
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView) {
         
-        if state == .PullRefresh {
+        if state == .pullRefresh {
             if delegate != nil {
                 
-                dispatch_async(dispatch_get_main_queue(),{
+                DispatchQueue.main.async(execute: {
                     self.delegate!.refreshData(self)
                 })
                 
@@ -260,19 +260,19 @@ public class RefreshLoadView: UIView{
             
             
             
-            dispatch_async(dispatch_get_main_queue(),{
-                self.arrowLayer.hidden = true
+            DispatchQueue.main.async(execute: {
+                self.arrowLayer.isHidden = true
             })
             
-            UIView.animateWithDuration(
-                Double(0.2),
+            UIView.animate(
+                withDuration: Double(0.2),
                 animations: {
                     
                     scrollView.contentInset = UIEdgeInsetsMake(self.insertSize, 0, 0, 0)
                 },
                 completion: { finished in
                     
-                    self.setState(ActionState.Refreshing)
+                    self.setState(ActionState.refreshing)
                 }
             )
             
@@ -280,18 +280,18 @@ public class RefreshLoadView: UIView{
             
         }
         
-        if state == .TopPull {
+        if state == .topPull {
             
             
-            UIView.animateWithDuration(
-                Double(0.1),
+            UIView.animate(
+                withDuration: Double(0.1),
                 animations: {
                     
                     scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
                 },
                 completion: { finished in
                     self.isrotate = false
-                    self.setState(.Normal)
+                    self.setState(.normal)
                 }
             )
             
@@ -302,10 +302,10 @@ public class RefreshLoadView: UIView{
         
     }
     
-    public func scrollViewDataSourceStartManualLoading(scrollView: UIScrollView) {
+    open func scrollViewDataSourceStartManualLoading(_ scrollView: UIScrollView) {
         
-        UIView.animateWithDuration(
-            Double(0.3),
+        UIView.animate(
+            withDuration: Double(0.3),
             animations: {
                 
                 scrollView.contentInset = UIEdgeInsetsMake(self.insertSize, 0, 0, 0)
@@ -317,17 +317,17 @@ public class RefreshLoadView: UIView{
         
     }
     
-    public func scrollViewFinishLoading(scrollView: UIScrollView) {
+    open func scrollViewFinishLoading(_ scrollView: UIScrollView) {
         
         
-        UIView.animateWithDuration(
-            Double(0.3),
+        UIView.animate(
+            withDuration: Double(0.3),
             animations: {
                 
                 scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
             },
             completion: { finished in
-                self.setState(.Normal)
+                self.setState(.normal)
             }
         )
         
@@ -335,30 +335,30 @@ public class RefreshLoadView: UIView{
         
     }
     
-    public func endRefresh(tableView: UITableView) {
+    open func endRefresh(_ tableView: UITableView) {
         
         
-        UIView.animateWithDuration(
-            Double(0.3),
+        UIView.animate(
+            withDuration: Double(0.3),
             animations: {
                 
                 tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
             },
             completion: { finished in
-                if self.state == .LoadMore{
+                if self.state == .loadMore{
                     self.isrotate = false
                 }
                 else{
                     self.isrotate = true
                 }
                 
-                if self.state != .Normal{
-                    self.setState(.Normal)
+                if self.state != .normal{
+                    self.setState(.normal)
                 }
                 
                 self.showElements.removeAllObjects()
                 self.nowItem = 0
-                self.showElements.addObjectsFromArray(self.allObjectArray.subarrayWithRange(NSMakeRange(self.nowItem, self.pageItems)))
+                self.showElements.addObjects(from: self.allObjectArray.subarray(with: NSMakeRange(self.nowItem, self.pageItems)))
                 tableView.reloadData()
                 
             }
@@ -370,14 +370,14 @@ public class RefreshLoadView: UIView{
     
     
     
-    public func endLoadMore(tableView: UITableView) {
+    open func endLoadMore(_ tableView: UITableView) {
         
         self.nowItem += self.pageItems
         if(self.nowItem < self.allObjectArray.count){
-            self.showElements.addObjectsFromArray(self.allObjectArray.subarrayWithRange(NSMakeRange(self.nowItem, self.pageItems)))
+            self.showElements.addObjects(from: self.allObjectArray.subarray(with: NSMakeRange(self.nowItem, self.pageItems)))
             self.isrotate = false
-            if self.state != .Normal{
-                self.setState(.Normal)
+            if self.state != .normal{
+                self.setState(.normal)
             }
             
             
@@ -385,16 +385,16 @@ public class RefreshLoadView: UIView{
         }
         else{
             
-            UIView.animateWithDuration(
-                Double(0.3),
+            UIView.animate(
+                withDuration: Double(0.3),
                 animations: {
                     
                     tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
                 },
                 completion: { finished in
                     self.isrotate = false
-                    if self.state != .Normal{
-                        self.setState(.Normal)
+                    if self.state != .normal{
+                        self.setState(.normal)
                     }
                     
                     
@@ -412,11 +412,11 @@ public class RefreshLoadView: UIView{
         
     }
     
-    public func setData(Data: NSMutableArray){
+    open func setData(_ Data: NSMutableArray){
         allObjectArray = Data
         if(self.pageItems > self.allObjectArray.count){
             self.pageItems = self.allObjectArray.count
         }
-        showElements.addObjectsFromArray(self.allObjectArray.subarrayWithRange(NSMakeRange(self.nowItem, self.pageItems)))
+        showElements.addObjects(from: self.allObjectArray.subarray(with: NSMakeRange(self.nowItem, self.pageItems)))
    }
 }

@@ -21,11 +21,11 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
         
         //add Test Data
         for i in 1...(100) {
-            allObjectArray.addObject(i.description)
+            allObjectArray.add(i.description)
         }
         
         //Initial
-        refreshloadView  = RefreshLoadView(frame: CGRectMake(95, 0, table_view.frame.width, table_view.frame.height), pic_size: CGFloat(30), insert_size: CGFloat(50))
+        refreshloadView  = RefreshLoadView(frame: CGRect(x: 95, y: 0, width: table_view.frame.width, height: table_view.frame.height), pic_size: CGFloat(30), insert_size: CGFloat(50))
         
         //have 25 item on each page
         refreshloadView.pageItems = 25
@@ -43,13 +43,13 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func refreshData(view: RefreshLoadView) {
+    func refreshData(_ view: RefreshLoadView) {
         
         //refresh data
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
             
             sleep(1)
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
                 //end refresh
                 self.refreshloadView.endRefresh(self.table_view)
@@ -60,12 +60,12 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
     
     
     
-    func loadData(view: RefreshLoadView) {
+    func loadData(_ view: RefreshLoadView) {
         
         //load more data
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
             sleep(1)
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
                 //end load more
                 self.refreshloadView.endLoadMore(self.table_view)
@@ -74,7 +74,7 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
         
     }
     
-    func tableView(tableView: UITableView,
+    func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int)
         -> Int {
             if refreshloadView != nil {
@@ -88,48 +88,48 @@ class ViewController: UIViewController, RefreshLoadViewDelegate {
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.view.layoutIfNeeded()
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         
     }
     
     ////show cell
-    func tableView(tableView: UITableView,
-                   cellForRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView,
+                   cellForRowAtIndexPath indexPath: IndexPath)
         -> UITableViewCell {
             
-            var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+            var cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as UITableViewCell!
             if !(cell != nil) {
-                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
+                cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
             }
             
             if refreshloadView != nil {
                 cell!.textLabel!.text = refreshloadView.showElements[indexPath.row] as? String
             }
             
-            return cell
+            return cell!
             
             
             
     }
     
     //scroll event
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         refreshloadView.scrollViewDidScroll(scrollView)
         
     }
     
     //scroll event
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
         refreshloadView.scrollViewDidEndDragging(scrollView)
     }
